@@ -15,7 +15,28 @@ class SearchJobs extends Component {
   }
 
   getjobDetails = () => {
-    return [];
+    fetch("/data/jobs.json")
+      .then(res => {
+        res.json();
+        console.log(res.json());
+      })
+      .then(
+        result => {
+          this.setState({
+            isLoaded: true,
+            items: result.items
+          });
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        error => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      );
   };
 
   onSearchInputChange = event => {
@@ -42,7 +63,7 @@ class SearchJobs extends Component {
             <Grid container spacing={24} style={{ padding: 24 }}>
               {this.state.jobDetails.map(currentJob => (
                 <Grid item xs={12} sm={6} lg={4} xl={3}>
-                  <jobDetails course={currentJob} />
+                  <JobDetails course={currentJob} />
                 </Grid>
               ))}
             </Grid>

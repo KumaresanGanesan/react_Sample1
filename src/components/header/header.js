@@ -5,7 +5,15 @@ import Typography from "@material-ui/core/Typography";
 
 class Header extends React.Component {
   render() {
-    return <h1>Hello, {this.props.name}</h1>;
+    return (
+      <AppBar position="static" color="default">
+        <Toolbar>
+          <Typography variant="title" color="inherit">
+            Title
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    );
   }
 }
 
