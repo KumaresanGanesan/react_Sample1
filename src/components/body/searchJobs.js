@@ -42,8 +42,8 @@ class SearchJobs extends Component {
           });
         }
       );*/
-    //this.setState({ jobDetails : []});
-    console.log(data);
+    this.setState({ jobDetails : data});
+    //console.log(data);
     return data;
   };
 

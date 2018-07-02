@@ -13,11 +13,9 @@ const JobDetails = props => {
           <CardContent>
             <Typography gutterBottom variant="headline" component="h2">
               {props.JobDetails.jobTitle}
-              Full Stack Developer1
             </Typography>
             <Typography component="p">
               {props.JobDetails.skillSet}
-              Full Stack Developer2
             </Typography>
           </CardContent>
           <CardActions>
