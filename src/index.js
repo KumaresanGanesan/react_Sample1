@@ -10,9 +10,7 @@ function App() {
   return (
     <div className="App">
       <Header name="vivek" />
-      <h1>Hello KumaresaN</h1>
       <SearchJobs />
-      <Footer name="vivek" />
     </div>
   );
 }

@@ -12,11 +12,11 @@ const JobDetails = props => {
         <Card>
           <CardContent>
             <Typography gutterBottom variant="headline" component="h2">
-              // {props.JobDetails.fields.title}
+              {props.JobDetails.jobTitle}
               Full Stack Developer1
             </Typography>
             <Typography component="p">
-              //{props.JobDetails.fields.description}
+              {props.JobDetails.skillSet}
               Full Stack Developer2
             </Typography>
           </CardContent>

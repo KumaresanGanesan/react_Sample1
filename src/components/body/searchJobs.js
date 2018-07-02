@@ -3,19 +3,24 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import JobDetails from "./jobDetails";
 
+import data from '../../data/jobs.json';
+
+
 class SearchJobs extends Component {
+  
   state = {
-    jobDetails: [],
+    jobDetails: data,
     searchString: ""
   };
 
   constructor() {
     super();
     this.getjobDetails();
+    //console.log(this.state.jobDetails);
   }
 
   getjobDetails = () => {
-    fetch("/data/jobs.json")
+    /*fetch("https://rawgit.com/vivekn91/helloWorld/master/jobs.json")
       .then(res => {
         res.json();
         console.log(res.json());
@@ -36,7 +41,10 @@ class SearchJobs extends Component {
             error
           });
         }
-      );
+      );*/
+    //this.setState({ jobDetails : []});
+    console.log(data);
+    return data;
   };
 
   onSearchInputChange = event => {
@@ -51,7 +59,7 @@ class SearchJobs extends Component {
   render() {
     return (
       <div>
-        {this.state.jobDetails ? (
+        {this.state.jobDetails !== [] ? (
           <div>
             <TextField
               style={{ padding: 24 }}
@@ -61,15 +69,15 @@ class SearchJobs extends Component {
               onChange={this.onSearchInputChange}
             />
             <Grid container spacing={24} style={{ padding: 24 }}>
-              {this.state.jobDetails.map(currentJob => (
-                <Grid item xs={12} sm={6} lg={4} xl={3}>
-                  <JobDetails course={currentJob} />
+              {this.state.jobDetails.map((currentJob) => (
+                <Grid item xs={12} sm={6} lg={4} xl={3} key={currentJob._id}>
+                  <JobDetails JobDetails={currentJob} />
                 </Grid>
               ))}
             </Grid>
           </div>
         ) : (
-          "No courses found"
+          "No Jobs found"
         )}
       </div>
     );
