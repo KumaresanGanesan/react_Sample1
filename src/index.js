@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Header from "./components/header/header";
+import Footer from "./components/footer/footer";
+import SearchJobs from "./components/body/searchJobs";
 
 import "./styles.css";
 
@@ -9,7 +11,8 @@ function App() {
     <div className="App">
       <Header name="vivek" />
       <h1>Hello KumaresaN</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <SearchJobs />
+      <Footer name="vivek" />
     </div>
   );
 }
