@@ -3,11 +3,9 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import JobDetails from "./jobDetails";
 
-import data from '../../data/jobs.json';
-
+import data from "../../data/jobs.json";
 
 class SearchJobs extends Component {
-  
   state = {
     jobDetails: data,
     searchString: ""
@@ -42,7 +40,7 @@ class SearchJobs extends Component {
           });
         }
       );*/
-    this.setState({ jobDetails : data});
+    this.setState({ jobDetails: data });
     //console.log(data);
     return data;
   };
@@ -61,15 +59,16 @@ class SearchJobs extends Component {
       <div>
         {this.state.jobDetails !== [] ? (
           <div>
-            <TextField
+            {/* <TextField
               style={{ padding: 24 }}
               id="searchInput"
               placeholder="Search for jobDetails"
               margin="normal"
               onChange={this.onSearchInputChange}
-            />
+            /> */}
+
             <Grid container spacing={24} style={{ padding: 24 }}>
-              {this.state.jobDetails.map((currentJob) => (
+              {this.state.jobDetails.map(currentJob => (
                 <Grid item xs={12} sm={6} lg={4} xl={3} key={currentJob._id}>
                   <JobDetails JobDetails={currentJob} />
                 </Grid>

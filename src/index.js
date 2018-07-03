@@ -1,19 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import Header from "./components/header/header";
-import Footer from "./components/footer/footer";
-import SearchJobs from "./components/body/searchJobs";
+import { render } from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import App from "./app";
 
-import "./styles.css";
-
-function App() {
-  return (
-    <div className="App">
-      <Header name="vivek" />
-      <SearchJobs />
-    </div>
-  );
-}
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("root")
+);
