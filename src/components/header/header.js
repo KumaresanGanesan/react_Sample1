@@ -12,6 +12,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormGroup from "@material-ui/core/FormGroup";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+import AppAuth from "../appAuth";
 
 const styles = {
   root: {
@@ -25,6 +26,9 @@ const styles = {
     marginRight: 20
   }
 };
+
+const auth = new AppAuth();
+auth.login();
 
 class MenuAppBar extends React.Component {
   state = {
