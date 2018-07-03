@@ -12,7 +12,7 @@ import ShortList from "./shortListUser";
 const Main = () => (
   <main>
     <Switch>
-      <Route exact path="/" component={Home} />
+      <Route exact path="/home" component={Home} />
       <Route path="/search" component={SearchJob} />
       <Route path="/shortList" component={ShortList} />
     </Switch>
